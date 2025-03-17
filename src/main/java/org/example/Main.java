@@ -1,39 +1,41 @@
 package org.example;
+import java.lang.reflect.Array;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Monster[] monsters = {
-                new Chatacabra(),
-                new Quematrice(),
-                new LalaBarina(),
-                new Congalala(),
-                new Balahara(),
-                new Doshaguma(),
-                new UthDuna(),
-                new Rompopolo(),
-                new ReyDau(),
-                new Nerscylla(),
-                new Hirabami(),
-                new Ajarakan(),
-                new NuUdra(),
-                new GuardianDoshaguma(),
-                new GuardianRathalos(),
-                new GuardianEbonyOdoragon(),
-                new XuWu(),
-                new GuardianArkveld(),
-                new ZohShia(),
-                new GuardianFulgurAnjanath(),
-                new YianKutKu(),
-                new Gypceros(),
-                new Rathian(),
-                new Rathalos(),
-                new Gravios(),
-                new Blangonga(),
-                new JinDahaad(),
-                new GoreMagala(),
-                new Arkveld()
-        };
+
+        ArrayList<Monster> monsters = new ArrayList<>();
+        monsters.add(new Chatacabra());
+        monsters.add(new Quematrice());
+        monsters.add(new LalaBarina());
+        monsters.add(new Congalala());
+        monsters.add(new Balahara());
+        monsters.add(new Doshaguma());
+        monsters.add(new UthDuna());
+        monsters.add(new Rompopolo());
+        monsters.add(new ReyDau());
+        monsters.add(new Nerscylla());
+        monsters.add(new Hirabami());
+        monsters.add(new Ajarakan());
+        monsters.add(new NuUdra());
+        monsters.add(new GuardianDoshaguma());
+        monsters.add(new GuardianRathalos());
+        monsters.add(new GuardianEbonyOdoragon());
+        monsters.add(new XuWu());
+        monsters.add(new GuardianArkveld());
+        monsters.add(new ZohShia());
+        monsters.add(new GuardianFulgurAnjanath());
+        monsters.add(new YianKutKu());
+        monsters.add(new Gypceros());
+        monsters.add(new Rathian());
+        monsters.add(new Rathalos());
+        monsters.add(new Gravios());
+        monsters.add(new Blangonga());
+        monsters.add(new JinDahaad());
+        monsters.add(new GoreMagala());
+        monsters.add(new Arkveld());
 
         Scanner myScanner = new Scanner(System.in);
         while (true) {
@@ -42,7 +44,8 @@ public class Main {
             String monsterName = myScanner.nextLine().toLowerCase();
             boolean found = false;
             for (Monster wantedMonster : monsters) {
-                if (wantedMonster.Name.toLowerCase().contains(monsterName)) { // Case-insensitive search
+                if (wantedMonster.Name.toLowerCase().contains(monsterName)) {
+                    displayTable(wantedMonster);// Case-insensitive search
                     System.out.println("Monster found!"
                             + "\n Monster Name: " + wantedMonster.Name
                             + "\n ⭐⭐⭐ " + wantedMonster.ElementWeak3Star
@@ -60,5 +63,23 @@ public class Main {
 
         }
     }
+    static void displayTable(String wantedMonster){
+        // Header row
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n",
+                "Name", "⭐⭐⭐", "⭐⭐", "⭐", "❌");
+        System.out.println("|------------|------------|------------|------------|------------|");
+
+        // Data rows
+            System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n",
+                wantedMonster.Name,
+                    wantedMonster.ElementWeak3Star,
+            wantedMonster.ElementWeak2Star,
+            wantedMonster.ElementWeak1Star,
+            wantedMonster.ElementNulled);
+            System.out.println("|------------|------------|------------|------------|------------|");
+
+        System.out.println();
+    }
+
     }
 
