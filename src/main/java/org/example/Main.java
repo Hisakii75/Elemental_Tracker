@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-
         ArrayList<Monster> monsters = new ArrayList<>();
         monsters.add(new Chatacabra());
         monsters.add(new Quematrice());
@@ -45,13 +44,8 @@ public class Main {
             boolean found = false;
             for (Monster wantedMonster : monsters) {
                 if (wantedMonster.Name.toLowerCase().contains(monsterName)) {
+                    System.out.println("Monster found!");
                     displayTable(wantedMonster);// Case-insensitive search
-                    System.out.println("Monster found!"
-                            + "\n Monster Name: " + wantedMonster.Name
-                            + "\n ⭐⭐⭐ " + wantedMonster.ElementWeak3Star
-                            + "\n ⭐⭐ " + wantedMonster.ElementWeak2Star
-                            + "\n ⭐ " + wantedMonster.ElementWeak1Star
-                            + "\n ❌ " + wantedMonster.ElementNulled);
                     found = true;
                     break; // Stop searching after finding the first match
                 }
@@ -63,23 +57,23 @@ public class Main {
 
         }
     }
-    static void displayTable(String wantedMonster){
+    static void displayTable(Monster wantedMonster){
         // Header row
-        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n",
+        System.out.println("|–––––––––––––––––––––––––––|–––––––––––––––––––––––––––|–––––––––––––––––––––––––––|–––––––––––––––––––––––––––|–––––––––––––––––––––––––––|");
+        System.out.printf("| %-25s | %-25s | %-25s | %-25s | %-25s |\n",
                 "Name", "⭐⭐⭐", "⭐⭐", "⭐", "❌");
-        System.out.println("|------------|------------|------------|------------|------------|");
+
+        System.out.println("|–––––––––––––––––––––––––––|–––––––––––––––––––––––––––|–––––––––––––––––––––––––––|–––––––––––––––––––––––––––|–––––––––––––––––––––––––––|");
 
         // Data rows
-            System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n",
+        System.out.printf("| %-25s | %-25s | %-25s | %-25s | %-25s |\n",
                 wantedMonster.Name,
-                    wantedMonster.ElementWeak3Star,
-            wantedMonster.ElementWeak2Star,
-            wantedMonster.ElementWeak1Star,
-            wantedMonster.ElementNulled);
-            System.out.println("|------------|------------|------------|------------|------------|");
+                wantedMonster.ElementWeak3Star,
+                wantedMonster.ElementWeak2Star,
+                wantedMonster.ElementWeak1Star,
+                wantedMonster.ElementNulled);
 
-        System.out.println();
+        System.out.println("|–––––––––––––––––––––––––––|–––––––––––––––––––––––––––|–––––––––––––––––––––––––––|–––––––––––––––––––––––––––|–––––––––––––––––––––––––––|");
     }
-
-    }
+}
 
