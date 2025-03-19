@@ -41,6 +41,10 @@ public class Main {
             System.out.println("Enter Monster Name:");
 
             String monsterName = myScanner.nextLine().toLowerCase();
+            if (monsterName.equalsIgnoreCase("exit")){
+                System.out.println("Closing program.");
+                System.exit(0);
+            }
             boolean found = false;
             for (Monster wantedMonster : monsters) {
                 if (wantedMonster.Name.toLowerCase().contains(monsterName)) {
@@ -61,7 +65,7 @@ public class Main {
         // Header row
         System.out.println("|–––––––––––––––––––––––––––|–––––––––––––––––––––––––––|–––––––––––––––––––––––––––|–––––––––––––––––––––––––––|–––––––––––––––––––––––––––|");
         System.out.printf("| %-25s | %-25s | %-25s | %-25s | %-25s |\n",
-                "Name", "⭐⭐⭐", "⭐⭐", "⭐", "❌");
+                "Name", "***", "**", "*", "X");
 
         System.out.println("|–––––––––––––––––––––––––––|–––––––––––––––––––––––––––|–––––––––––––––––––––––––––|–––––––––––––––––––––––––––|–––––––––––––––––––––––––––|");
 
