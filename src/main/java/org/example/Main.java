@@ -39,17 +39,17 @@ public class Main {
 
         Scanner myScanner = new Scanner(System.in);
         while (true) {
-            System.out.println("Enter Monster Name:");
+            System.out.println("\nEnter Monster Name:\n");
 
             String monsterName = myScanner.nextLine().toLowerCase();
             if (monsterName.equalsIgnoreCase("exit")){
-                System.out.println("Closing program.");
+                System.out.println("\nClosing program.");
                 System.exit(0);
             }
             boolean found = false;
             for (Monster wantedMonster : monsters) {
                 if (wantedMonster.Name.toLowerCase().contains(monsterName)) {
-                    System.out.println("Monster found!");
+                    System.out.println("\nMonster found!\n");
                     displayTable(wantedMonster);// Case-insensitive search
                     found = true;
                     break; // Stop searching after finding the first match
@@ -57,7 +57,7 @@ public class Main {
             }
 
             if (!found) {
-                System.out.println("Monster not found.");
+                System.out.println("\nMonster not found.\n");
             }
 
         }
