@@ -66,12 +66,12 @@ public class Main {
 
     static void displayTable(Monster wantedMonster) {
         // Header row
-        System.out.println("|–––––––––––––––––|–––––––––––––––––|–––––––––––––––––|–––––––––––––––––|–––––––––––––––––|");
+        System.out.println("||=================||============||============||============||============||");
 
-        System.out.printf("| %-15s | %-15s | %-15s | %-15s | %-15s |\n",
+        System.out.printf("|| %-15s || %-10s || %-10s || %-10s || %-10s ||\n",
                 "Name", "***", "**", "*", "X");
 
-        System.out.println("|–––––––––––––––––|–––––––––––––––––|–––––––––––––––––|–––––––––––––––––|–––––––––––––––––|");
+        System.out.println("||=================||============||============||============||============||");
 
         // Split long name at spaces within 15 characters
         List<String> nameLines = splitByLength(wantedMonster.Name);
@@ -94,11 +94,11 @@ public class Main {
             String weak1Part = i < weak1StarLines.size() ? weak1StarLines.get(i) : "";
             String nulledPart = i < nulledLines.size() ? nulledLines.get(i) : "";
 
-            System.out.printf("| %-15s | %-15s | %-15s | %-15s | %-15s |\n",
+            System.out.printf("|| %-15s || %-10s || %-10s || %-10s || %-10s ||\n",
                     namePart, weak3Part, weak2Part, weak1Part, nulledPart);
         }
 
-        System.out.println("|–––––––––––––––––|–––––––––––––––––|–––––––––––––––––|–––––––––––––––––|–––––––––––––––––|");
+        System.out.println("||=================||============||============||============||============||");
     }
 
 
